@@ -1,4 +1,3 @@
-# main.py
 from strategies.moving_average import MovingAverageStrategy
 import plotly.io as pio
 import plotly.express as px
@@ -23,22 +22,6 @@ def plot_signals(df, bullish_signal, bearish_signal):
 
     fig.show()
 
-def main(symbol):
-    # Erstelle die MovingAverageStrategy Instanz
-    strategy = MovingAverageStrategy(symbol)
-
-    # Bullish und Bearish Signale analysieren
-    bullish_signal, bearish_signal = strategy.analyze_crossovers()
-
-    # Signale ausgeben
-    print("Bullish Signals:")
-    print(bullish_signal[['time', 'crossover']])  # Ausgabe nur der Zeit und des Signals
-    print("\nBearish Signals:")
-    print(bearish_signal[['time', 'crossover']])  # Ausgabe nur der Zeit und des Signals
-
-    # Plot der Signale
-    plot_signals(strategy.df, bullish_signal, bearish_signal)
-
+# Diese Funktion wird nicht mehr direkt genutzt, weil die Logik bereits in der WebSocket-Verbindung enthalten ist.
 if __name__ == '__main__':
-    symbol = 'BTCUSDT'  # Beispiel: BTC/USDT, kann auf beliebige Kryptowährung geändert werden
-    main(symbol)
+    pass
